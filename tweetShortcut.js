@@ -8,6 +8,15 @@
 
 jetpack.future.import("pageMods");
 
+var manifest = {
+  settings: [
+    {
+      name: "ctrlkey",
+      type: "boolean",
+      label: "Ctrl key" },
+  ]
+};
+
 var callback = function(doc){
   var textBox = $("#status", doc);
   textBox.keydown(function(e) {
