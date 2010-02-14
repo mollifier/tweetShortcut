@@ -1,3 +1,11 @@
+// @name: Tweet Shortcut
+// @description: Bind Enter key to tweet.
+// @auther : mollifier http://d.hatena.ne.jp/mollifier/
+// @version : 0.0.1
+//
+// Tweet Shortcut is released under the MIT License.
+// http://www.opensource.org/licenses/mit-license.php
+
 jetpack.future.import("pageMods");
 
 var callback = function(doc){
