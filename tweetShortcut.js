@@ -13,14 +13,20 @@ var manifest = {
     {
       name: "ctrlkey",
       type: "boolean",
-      label: "Ctrl key" },
+      label: "Ctrl key",
+      default: false
+    }
   ]
 };
-
+jetpack.future.import("storage.settings");
 
 function isTweetKey(e) {
   // 13 : Enter key code
-  return e.keyCode === 13;
+  if (jetpack.storage.settings.ctrlkey) {
+    return e.ctrlKey && e.keyCode === 13;
+  } else {
+    return e.keyCode === 13;
+  }
 }
 
 function callback(doc) {
