@@ -10,23 +10,23 @@ jetpack.future.import("pageMods");
 
 var manifest = {
   settings: [
-    {
-      name: "ctrlkey",
-      type: "boolean",
-      label: "Ctrl key",
-      default: false
-    }
+    { name: "needCtrlKey", type: "boolean", label: "Ctrl key", default: false },
+    { name: "needAltKey", type: "boolean", label: "Alt key", default: false }
   ]
 };
 jetpack.future.import("storage.settings");
 
 function isTweetKey(e) {
-  // 13 : Enter key code
-  if (jetpack.storage.settings.ctrlkey) {
-    return e.ctrlKey && e.keyCode === 13;
-  } else {
-    return e.keyCode === 13;
+  if (jetpack.storage.settings.needCtrlKey && ! e.ctrlKey) {
+    return false;
   }
+
+  if (jetpack.storage.settings.needAltKey && ! e.altKey) {
+    return false;
+  }
+
+  // 13 : Enter key code
+  return e.keyCode === 13;
 }
 
 function callback(doc) {
