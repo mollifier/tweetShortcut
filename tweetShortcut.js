@@ -5,7 +5,7 @@ var callback = function(doc){
   textBox.keydown(function(e) {
     if (e.keyCode === 13 && textBox.value !== "") {
       // 13 : Enter key code
-      $("#status_update_form", doc).submit();
+      $("#update-submit", doc).click();
     }
   });
 };
