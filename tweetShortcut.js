@@ -17,15 +17,20 @@ var manifest = {
   ]
 };
 
-var callback = function(doc){
+
+function isTweetKey(e) {
+  // 13 : Enter key code
+  return e.keyCode === 13;
+}
+
+function callback(doc) {
   var textBox = $("#status", doc);
   textBox.keydown(function(e) {
-    if (e.keyCode === 13 && textBox.value !== "") {
-      // 13 : Enter key code
+    if (isTweetKey(e) && textBox.value !== "") {
       $("#update-submit", doc).click();
     }
   });
-};
+}
 
 var options = {};
 options.matches = [
