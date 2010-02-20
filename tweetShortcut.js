@@ -1,7 +1,7 @@
 // @name: Tweet Shortcut
 // @description: Bind Enter key to tweet.
 // @auther : mollifier http://d.hatena.ne.jp/mollifier/
-// @version : 0.0.1
+// @version : 0.0.2
 //
 // Tweet Shortcut is released under the MIT License.
 // http://www.opensource.org/licenses/mit-license.php
